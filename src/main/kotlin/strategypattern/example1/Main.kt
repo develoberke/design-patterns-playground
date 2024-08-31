@@ -8,24 +8,19 @@ import com.develoberke.strategypattern.example1.weapon.BowAndArrowBehaviour
 import com.develoberke.strategypattern.example1.weapon.SwordBehaviour
 
 fun main() {
-    val knight = Knight()
     val swordBehaviour = SwordBehaviour()
-    knight.setWeapon(swordBehaviour)
+    val axeBehaviour = AxeBehaviour()
+    val bowAndArrowBehaviour = BowAndArrowBehaviour()
 
+    val knight = Knight(swordBehaviour)
     knight.fight()
 
-    val king = King()
-    val axeBehaviour = AxeBehaviour()
-    king.setWeapon(axeBehaviour)
-
+    val king = King(axeBehaviour)
     king.fight()
 
     knight.setWeapon(axeBehaviour)
     knight.fight()
 
-    val queen = Queen()
-    val bowAndArrowBehaviour = BowAndArrowBehaviour()
-    queen.setWeapon(bowAndArrowBehaviour)
-
+    val queen = Queen(bowAndArrowBehaviour)
     queen.fight()
 }

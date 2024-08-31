@@ -23,3 +23,9 @@ test {
 tasks.withType(KtLintFormatTask) {
     description = "Ktlint Format"
 }
+
+tasks {
+    test {
+        useJUnitPlatform()
+    }
+}
